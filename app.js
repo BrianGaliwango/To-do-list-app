@@ -2,17 +2,24 @@ const form = document.getElementById('form');
 const input = document.getElementById('input');
 const todosUL = document.getElementById('todos');
 
+
+// Getting To dos from local Storage
 const todos = JSON.parse(localStorage.getItem('todos'));
 
 if(todos) {
   todos.forEach(todo => addTodo(todo));
 }
 
+
+// Adding To do to the form
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     addTodo()
 })
+
+
+// Adding To do
 
 function addTodo(todo) {
   let todoText = input.value;
@@ -50,6 +57,7 @@ function addTodo(todo) {
   }
 }
 
+// Local Storage
 function updateLS() {
   todosEl = document.querySelectorAll('li')
 
